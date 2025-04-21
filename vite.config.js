@@ -6,7 +6,7 @@ import path from 'path';
 export default defineConfig({
   resolve: {
     alias: {
-      '@config': path.resolve(__dirname, 'config'),
+      '@config': path.resolve(__dirname, './src/config'),
     },
   },
   plugins: [ react() ],
