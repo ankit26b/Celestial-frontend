@@ -335,7 +335,7 @@ const Project = () => {
                                 }}
                                 className='p-2 px-4 bg-slate-400 text-black text-md font-semibold'
                             >
-                                run
+                                Celestial
                             </button>
 
 

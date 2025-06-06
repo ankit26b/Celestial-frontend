@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
   const { user } = useContext(UserContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [projectName, setProjectName] = useState(null);
+  const [projectName, setProjectName] = useState("");
   const [project, setProject] = useState([]);
 
   const navigate = useNavigate();
@@ -34,10 +34,13 @@ const Home = () => {
     axios
       .get("/projects/all")
       .then((res) => {
-        setProject(res.data.projects);
+        console.log("API response: ", res.data)
+        const projects = res.data?.projects || [];
+        setProject(projects);
       })
       .catch((err) => {
         console.log(err);
+        setProject([]);
       });
   }, []);
 
